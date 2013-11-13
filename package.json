@@ -1,5 +1,5 @@
 {
-  "name": "google-analytics",
+  "name": "ga-collect",
   "version": "0.1.0",
   "description": "A server interface for Google's analytics.js",
   "main": "index.js",

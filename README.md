@@ -1,13 +1,14 @@
-#analytics.js
+#ga-collect
+A backend interface for the new version of Google Analytics, analytics.js, allowing you to proxy your events from your server rather than load the analytics code directly into the browser.
 
 ##Installation
-`npm install google-analytics`
+`npm install ga-collect`
 
 ##Usage
 ```javascript
-var GA = require('google-analytics');
+var GA = require('ga-collect');
 var ga = new GA({urchin: 'UA-XXXXX-X'});
-#pageview(
+ga.pageview(
   {
     location: 'http://foobar.baz/a?b#c',
     hostname: 'foobar.baz',
@@ -45,8 +46,8 @@ The following methods are supported, the callback is entirely optional. No succe
 
 ##Development
 ```bash
-git clone https://github.com/toddself/google-analytics
-cd google-analytics
+git clone https://github.com/toddself/ga-collect
+cd ga-collect
 npm install
 ```
 
