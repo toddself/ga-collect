@@ -1,3 +1,5 @@
+[![build status](https://secure.travis-ci.org/toddself/ga-collect.png)](http://travis-ci.org/toddself/ga-collect)
+
 #ga-collect
 A backend interface for the new version of Google Analytics, analytics.js, allowing you to proxy your events from your server rather than load the analytics code directly into the browser.
 
