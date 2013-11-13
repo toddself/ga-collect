@@ -1,0 +1,37 @@
+{
+  "name": "google-analytics",
+  "version": "0.0.0",
+  "description": "A server interface for Google's analytics.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -R spec",
+    "lint": "./node_modules/.bin/jshint index.js lookups.js test.js",
+    "pre-commit": "npm run lint && npm test",
+    "postinstall": "if [[ -d .git ]]; then cp pre-commit.sh .git/hooks/pre-commit && chmod +x .git/hooks/pre-commit; fi"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/toddself/node-ga-collect"
+  },
+  "keywords": [
+    "google",
+    "analytics",
+    "analytics.js",
+    "tracking",
+    "reporting"
+  ],
+  "author": "Todd Kennedy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/toddself/node-ga-collect/issues"
+  },
+  "dependencies": {
+    "request": "~2.27.0",
+    "xtend": "~2.1.1"
+  },
+  "devDependencies": {
+    "jshint": "~2.3.0",
+    "mocha": "~1.14.0",
+    "nock": "~0.23.0"
+  }
+}
