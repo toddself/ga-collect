@@ -7,7 +7,7 @@
 ```javascript
 var GA = require('google-analytics');
 var ga = new GA({urchin: 'UA-XXXXX-X'});
-ga.pageview(
+#pageview(
   {
     location: 'http://foobar.baz/a?b#c',
     hostname: 'foobar.baz',
@@ -21,16 +21,27 @@ ga.pageview(
 ```
 
 ##Methods
-'ga.pageview'
-'ga.appview'
-'ga.event'
-'ga.transaction'
-'ga.item'
-'ga.social'
-'ga.exception'
-'ga.timing'
+The keys for the event object passed into each function are the `Field Name` parameters from the [Analytics.js Field Reference](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference).
 
+The following methods are supported, the callback is entirely optional. No success or failure message will be passed to it unless the server responds with a non 2XX status code:
 
+`#pageview(event, cb)`
+
+`#appview(event, cb)`
+
+`#event(event, cb)`
+
+`#transaction(event, cb)`
+
+`#item(event, cb)`
+
+`#social(event, cb)`
+
+**Note:** Social events *MUST* contain all three [social interaction](https://developers.google.com/analytics/devguides/collection/analyticsjs/field-reference#socialNetwork) parameters. If they are not provided, an error will be thrown.
+
+`#exception(event, cb)`
+
+`#timing(event, cb)`
 
 ##Development
 ```bash
@@ -38,3 +49,6 @@ git clone https://github.com/toddself/google-analytics
 cd google-analytics
 npm install
 ```
+
+##License & Copyright
+Copyright (c) 2013 Todd Kennedy, licensed under the [MIT License](/LICENSE)
